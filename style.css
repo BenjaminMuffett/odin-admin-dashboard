@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 1px solid rebeccapurple;
+}
+  
+
+.body-wrapper {
+    display: grid;  
+    grid-template-areas: 
+    "dash head"
+    "dash main";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 9fr;
+}
+
+.header {
+    grid-area: head;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 2fr 3fr;
+}
+
+.dashboard {
+    grid-area: dash;
+    display: grid;
+}
+
+.main-content {
+    grid-area: main;
+    display: grid;
+    grid-template-areas: 
+    "posts anno"
+    "posts trend";
+    grid-template-columns: 4fr 1fr;   
+}
+
+.posts {
+    grid-area: posts;
+    display: grid;
+}
+
+.announcements {
+    grid-area: anno;
+}
+
+.trending {
+    grid-area: trend;
+}
