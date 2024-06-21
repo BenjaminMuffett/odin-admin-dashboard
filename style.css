@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    border: 1px solid rebeccapurple;
+    /* border: 1px solid rebeccapurple; */
+    font-size: 18px;
 }
   
 
@@ -10,8 +11,9 @@
     grid-template-areas: 
     "dash head"
     "dash main";
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: minmax(auto, 275px) 4fr;
     grid-template-rows: 1fr 9fr;
+    max-height: 99vh;
 }
 
 .header {
@@ -19,12 +21,44 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 2fr 3fr;
+    background-color: #faf5ff;
+}
+
+.user-display {
+    display: grid;
+    grid-template-columns: 100px auto;
+    align-items: center;
 }
 
 .dashboard {
     grid-area: dash;
     display: grid;
+    background-color: #9333ea;
+    align-content: start;
+    gap: 20px;
+    
 }
+.dashboard > .dash > button {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+}
+
+button > img {
+    filter: invert(84%) sepia(98%) saturate(2082%) hue-rotate(181deg) brightness(110%) contrast(106%);
+}
+
+.dash button {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 10px;
+    place-items: center;
+    color: #faf5ff;
+    background-color: #9333ea;
+    border: 0px;
+    font-weight: 600;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+} 
 
 .main-content {
     grid-area: main;
@@ -32,7 +66,9 @@
     grid-template-areas: 
     "posts anno"
     "posts trend";
-    grid-template-columns: 4fr 1fr;   
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: repeat(2, 0.5fr); 
+    background-color: #f3e8ff;  
 }
 
 .posts {
@@ -42,8 +78,35 @@
 
 .announcements {
     grid-area: anno;
+    display: grid;
+    grid-template: 20px 1fr / 1fr;
+    gap: 10px;
+}
+
+.anno-box {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.text-body {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .trending {
     grid-area: trend;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.1rem repeat(4, auto);
+    gap: 5px;
+    max-height: 300px;
+}
+
+.trend-user {
+    display: grid;
+    grid-template-columns: 50px auto;
+    align-items: center;
 }
