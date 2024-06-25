@@ -11,9 +11,9 @@
     grid-template-areas: 
     "dash head"
     "dash main";
-    grid-template-columns: minmax(auto, 275px) 4fr;
+    grid-template-columns: minmax(auto, 275px) 1fr;
     grid-template-rows: 1fr 9fr;
-    max-height: 99vh;
+    max-height: 100vh;
 }
 
 .header {
@@ -22,12 +22,87 @@
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 2fr 3fr;
     background-color: #faf5ff;
+    box-shadow: 0px 0px 5px grey;
+    position: relative;
+}
+
+.search-bar {
+    display: grid;
+    gap: 15px;
+    align-items: center;
+    grid-template-columns: 35px 90%;
+    margin-left: 40px;
+}
+
+.search-bar button {
+    width: auto;
+    border: none;
+    cursor: pointer;
+    background-color: #faf5ff;
+    align-self: center;
+}
+
+.search-bar input {
+    background-color: #f3e8ff;
+    border: 1px solid #f3e8ff;
+    width: auto;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.section-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user-section {
+    display: grid;
+    grid-template-columns: 35px 75px auto;
+    align-items: center;
+    place-content: center;
+    gap: 25px;
+}
+
+.user-bell {
+    border: none;
+    background-color: #faf5ff;
+    cursor: pointer;
+}
+
+.submit {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    place-content: center;
+    gap: 40px;
+}
+
+.submit button {
+    background-color: #9333ea;
+    color: #faf5ff;
+    border-radius: 20px;
+    padding: 10px 25px 10px 25px;
+    border: 1px solid #9333ea;
+    cursor: pointer;
 }
 
 .user-display {
     display: grid;
     grid-template-columns: 100px auto;
     align-items: center;
+    margin-left: 40px;
+    padding-bottom: 5px;
+    gap: 10px;
+}
+
+.welcome {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.welcome-user {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .dashboard {
@@ -35,15 +110,16 @@
     display: grid;
     background-color: #9333ea;
     align-content: start;
-    gap: 20px;
+    gap: 25px;
     
 }
 .dashboard > .dash > button {
     display: grid;
-    grid-template-columns: 75px 1fr;
+    grid-template-columns: 50px 1fr;
+    font-size: 28px;
 }
 
-button > img {
+.dash button > img {
     filter: invert(84%) sepia(98%) saturate(2082%) hue-rotate(181deg) brightness(110%) contrast(106%);
 }
 
