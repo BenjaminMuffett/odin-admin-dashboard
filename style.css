@@ -1,10 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
     /* border: 1px solid rebeccapurple; */
     font-size: 18px;
 }
-  
 
 .body-wrapper {
     display: grid;  
@@ -12,7 +12,7 @@
     "dash head"
     "dash main";
     grid-template-columns: minmax(auto, 275px) 1fr;
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 20vh 1fr;
     max-height: 100vh;
 }
 
@@ -111,6 +111,7 @@
     background-color: #9333ea;
     align-content: start;
     gap: 25px;
+    max-height: 1fr;
     
 }
 .dashboard > .dash > button {
@@ -143,8 +144,9 @@
     "posts anno"
     "posts trend";
     grid-template-columns: 4fr 1fr;
-    grid-template-rows: repeat(2, 0.5fr); 
-    background-color: #f3e8ff;  
+    grid-template-rows: 1fr 1fr; 
+    background-color: #f3e8ff;
+    max-height: 80vh;
 }
 
 .posts {
@@ -154,15 +156,20 @@
 
 .announcements {
     grid-area: anno;
+    padding: 20px;
     display: grid;
-    grid-template: 20px 1fr / 1fr;
-    gap: 10px;
+    grid-template: 20px 300px / 1fr;
+    gap: 5px;
+    align-items: center;
 }
 
 .anno-box {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
+    background-color: #faf5ff;
+    padding: 20px;
+    border-radius: 15px;
 }
 
 .text-body {
@@ -174,15 +181,24 @@
 
 .trending {
     grid-area: trend;
+    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.1rem repeat(4, auto);
+    grid-template: 20px 300px / 1fr;
     gap: 5px;
-    max-height: 300px;
 }
 
 .trend-user {
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: 30px 1fr;
     align-items: center;
+    gap: 10px;
+    
+}
+
+.trending-box {
+    background-color: #faf5ff;
+    padding: 0px 0px 0px 20px;
+    display: grid;
+    gap: 5px;
+    border-radius: 15px;
 }
