@@ -2,8 +2,17 @@
     margin: 0;
     padding: 0;
     border: 0;
-    /* border: 1px solid rebeccapurple; */
     font-size: 18px;
+    font-family: 'noto_monoregular';
+    line-height: 1.3;
+}
+
+@font-face {
+    font-family: 'noto_monoregular';
+    src: url('/Font/notomono-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 .body-wrapper {
@@ -12,8 +21,7 @@
     "dash head"
     "dash main";
     grid-template-columns: minmax(auto, 275px) 1fr;
-    grid-template-rows: 20vh 1fr;
-    max-height: 100vh;
+    grid-template-rows: 20vh 80vh;
 }
 
 .header {
@@ -133,7 +141,7 @@
     background-color: #9333ea;
     border: 0px;
     font-weight: 600;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 50px 10px 20px;
     cursor: pointer;
 } 
 
@@ -146,21 +154,30 @@
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 1fr 1fr; 
     background-color: #f3e8ff;
-    max-height: 80vh;
 }
 
 .posts {
     grid-area: posts;
     display: grid;
+    grid-template: 30px 1fr / 1fr;
+    gap: 10px;
+    padding: 20px;
+}
+
+.post-space {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    /* max-height: 90%; */
 }
 
 .announcements {
     grid-area: anno;
-    padding: 20px;
+    padding: 20px 20px 20px 0px;
     display: grid;
-    grid-template: 20px 300px / 1fr;
-    gap: 5px;
-    align-items: center;
+    grid-template: auto 300px / 1fr;
+    gap: 10px;
 }
 
 .anno-box {
@@ -170,26 +187,32 @@
     background-color: #faf5ff;
     padding: 20px;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.text-body {
+.text-body,
+.text {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
+.anno-item:nth-child(-n + 2) {
+    border-bottom: 2px solid #f3e8ff;
+}
+
 .trending {
     grid-area: trend;
-    padding: 20px;
+    padding: 0px 20px 20px 0px;
     display: grid;
-    grid-template: 20px 300px / 1fr;
-    gap: 5px;
+    grid-template: 30px auto / 1fr;
+    gap: 10px;
 }
 
 .trend-user {
     display: grid;
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: 45px 1fr;
     align-items: center;
     gap: 10px;
     
@@ -201,4 +224,49 @@
     display: grid;
     gap: 5px;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.post-box {
+    display: grid;
+    grid-template: 40px 1fr 30px / minmax(175px, 1fr);
+    background-color: #faf5ff;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 15px;
+    gap: 5px;
+    border-left: 10px solid #9333ea;
+}
+
+.post-box .title {
+    align-self: end;
+}
+
+.post-box .action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 35px);
+    justify-content: end;
+    gap: 10px;
+}
+
+.title,
+.user-tag {
+    font-weight: bold;
+    color: black;
+}
+
+.text,
+.text-body {
+    color: grey;
+}
+
+.text-body,
+.anno-item .title,
+.user-text p {
+    font-size: 0.7rem;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
