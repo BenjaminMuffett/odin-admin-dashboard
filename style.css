@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'noto_monoregular';
-    src: url('/Font/notomono-regular-webfont.woff2') format('woff2');
+    src: url('Font/notomono-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 
